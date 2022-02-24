@@ -20,8 +20,6 @@ B = {7, 4, 6, 1, 3,9}
 C = {1, 2, 3, 4, 6, 9, 8}
  */
 
-import java.util.Arrays;
-
 public class Main {
     final static int ASSIGN_TO_CHECK = 3;   // choose which part of the HW to check
 
@@ -48,5 +46,4 @@ public class Main {
             a3.run(subset1, subset2, master_set);
         }
     }
-
 }
