@@ -1,8 +1,6 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-
-
 public class assign1 {
     public void run(){
         check_num_in_set();
