@@ -20,12 +20,12 @@ B = {7, 4, 6, 1, 3,9}
 C = {1, 2, 3, 4, 6, 9, 8}
  */
 
+import java.util.Arrays;
 
 public class Main {
-    final static int ASSIGN_TO_CHECK = 2;   // choose which part of the HW to check
+    final static int ASSIGN_TO_CHECK = 3;   // choose which part of the HW to check
 
     public static void main(String[] args) throws InterruptedException {
-
         // assignment 1. >> CHECK FOR USER INPUT IN SET
         if(ASSIGN_TO_CHECK == 1) {
             assign1 a1 = new assign1();
@@ -39,5 +39,14 @@ public class Main {
         }
 
         // assignment 3. >> CHECK IF SETS ARE SUBSETS OF ANOTHER SET
+        if(ASSIGN_TO_CHECK == 3){
+            int[] subset1 = {2, 1, 6, 3, 2, 9, 3};
+            int[] subset2 = {7, 4, 6, 1, 3, 9};
+            int[] master_set = {1, 2, 3, 4, 6, 9, 8};
+
+            assign3 a3 = new assign3();
+            a3.run(subset1, subset2, master_set);
+        }
     }
+
 }
