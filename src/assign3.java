@@ -75,6 +75,15 @@ public class assign3 {
                     subset1[i + 1] = key;
                 }
 
+                // wait till master thread is finished before continuing
+                // - should allow the sorting of all three sets around the
+                //   same time?
+
+                try {
+                    sortMasterSet.join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
                 System.out.println("\t> [THREAD2] Sorting Done!" +
                         "\n\t> [THREAD2] Starting Check Against Master...");
@@ -145,8 +154,16 @@ public class assign3 {
                     subset2[i + 1] = key;
                 }
 
+                // wait till master thread is finished before continuing
+                // - should allow the sorting of all three sets around the
+                //   same time?
+                try {
+                    sortMasterSet.join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
-                 System.out.println("\t> [THREAD3] Sorting Done!" +
+                System.out.println("\t> [THREAD3] Sorting Done!" +
                         "\n\t> [THREAD3] Starting Check Against Master...");
 
 
@@ -192,7 +209,7 @@ public class assign3 {
         );
 
         sortMasterSet.start();
-        sortMasterSet.join();       // wait till master set is sorted before continuing
+        //sortMasterSet.join();       // wait till master set is sorted before continuing
 
         checkThread1.start();
         checkThread2.start();
