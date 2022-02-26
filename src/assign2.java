@@ -34,7 +34,7 @@ public class assign2{
                 int i = 0;  // position
                 int key;    // curr val
 
-                System.out.println("\t> Sorting Array...");
+                System.out.println("\t>[THREAD1] Sorting Array...");
 
                 for (int j = 1; j < set1.length; j++) {
                     key = set1[j];
@@ -56,7 +56,7 @@ public class assign2{
                 }
 
 
-                System.out.println("\t> Sorting Done!");
+                System.out.println("\t>[THREAD1] Sorting Done!");
 
                 System.out.println("***Thread 1 finished***");
             }
@@ -71,7 +71,7 @@ public class assign2{
                 int i = 0;  // position
                 int key;    // curr val
 
-                System.out.println("\t> Sorting Array...");
+                System.out.println("\t>[THREAD2] Sorting Array...");
 
                 for (int j = 1; j < set2.length; j++) {
                     key = set2[j];
@@ -93,7 +93,7 @@ public class assign2{
                 }
 
 
-                System.out.println("\t> Sorting Done!");
+                System.out.println("\t>[THREAD2] Sorting Done!");
 
                 System.out.println("***Thread 2 Finished***");
             }
@@ -104,7 +104,7 @@ public class assign2{
         sorter_thread2.start();
 
         // hold until threads finish (after sort message fails without this)
-        sorter_thread1.join();
+        // sorter_thread1.join();
         sorter_thread2.join();
 
         if(ENABLE_DEBUG) System.out.println(
